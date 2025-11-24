@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechNova サンプルサイト</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0b3e63, #1e90ff, #6dd5fa);
+      background-size: 300% 300%;
+      animation: bgMove 12s ease infinite;
+      color: #fff;
+      line-height: 1.6;
+    }
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    header h1 { margin: 0; font-size: 24px; }
+    .nav {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .nav a {
+      color: #e3f3ff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .nav a:hover { color: #aee1ff; }
+
+    .section {
+      background: rgba(255, 255, 255, 0.101);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 30px;
+      margin: 30px auto;
+      max-width: 1000px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
+    }
+    .section.show { opacity: 1; transform: translateY(0); }
+    .section:hover { transform: translateY(-5px); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.453); }
+
+    h2 { font-size: 24px; color: #fff; text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5); }
+
+    .service-list { display: flex; flex-wrap: wrap; gap: 20px; }
+    .service { flex: 1 1 200px; background: rgba(255, 255, 255, 0.259); padding: 20px; border-radius: 14px; text-align: center; transition: transform 0.3s; }
+    .service:hover { transform: translateY(-5px) scale(1.05); }
+
+    .footer { text-align: center; padding: 20px; font-size: 14px; opacity: 0.85; }
+
+    @media(max-width:768px){
+      header { flex-direction: column; align-items: flex-start; }
+      .nav { overflow-x: auto; gap: 10px; width: 100%; margin-top: 10px; }
+      .service-list { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TechNova</h1>
+    <nav class="nav">
+      <a href="index.html">ホーム</a>
+      <a href="#services">サービス</a>
+      <a href="#works">実績</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <section id="hero" class="section">
+    <h2>未来を創るWebソリューション</h2>
+    <p>TechNovaは最新のWeb技術であなたのビジネスを加速させます。</p>
+  </section>
+
+  <section id="services" class="section">
+    <h2>サービス内容</h2>
+    <div class="service-list">
+      <div class="service">画像を載せることが出来ます</div>
+      <div class="service">動画を載せることが出来ます</div>
+      <div class="service">企業の紹介もできます</div>
+      <div class="service">モバイル対応もできます</div>
+    </div>
+  </section>
+
+  <section id="works" class="section">
+    <h2>SNSを載せる事が出来ます</h2>
+    <ul>
+      <li><a href="sannpuru.html">テストTwitter(X)</a></li>
+      <li><a href="sannpuru.html">テストYouTube</a></li>
+      <li><a href="sannpuru.html">テストTikTok</a></li>
+    </ul>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>お問い合わせ</h2>
+    <p>お気軽に <a href="sannpuru.html">こちら(押せません)</a> からご連絡ください。</p>
+  </section>
+
+  <div class="footer">
+    © 2025 TechNova
+  </div>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('show');
+    });
+  });
+  document.querySelectorAll('.section').forEach(sec => observer.observe(sec));
+</script>
+</body>
+</html>

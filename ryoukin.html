@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crayweb / 料金プラン一覧</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#779fbb,#1e90ff,#6dd5fa);
+  background-size: 300% 300%;
+  animation: bgMove 15s ease infinite;
+  color: #fff;
+}
+
+header {
+  background: rgba(237, 185, 185, 0.35);
+  backdrop-filter: blur(12px);
+  padding: 20px 30px;
+  text-align: center;
+  font-size:24px;
+  font-weight:bold;
+  position: sticky;
+  top:0;
+  z-index:1000;
+}
+
+  .nav {
+    overflow-x: auto;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.plan-card {
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  border:1px solid rgba(255,255,255,0.25);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.plan-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+.plan-card h3 {
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+
+.plan-card .price {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #aee1ff;
+}
+
+footer {
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+  opacity:0.85;
+}
+</style>
+</head>
+<body>
+
+<header>料金プラン一覧</header>
+  <header>
+    <nav class="nav">
+      <a href="index.html">ホーム</a>
+      <a href="paypay.html">PayPay支払いについて</a>
+    </nav>
+  </header>
+
+<div class="container">
+  <!-- 30種類以上のサンプルプラン -->
+  <div class="plan-card"><h3>1番</h3><div class="price">500円</div>1ページのみのサイト制作</div>
+  <div class="plan-card"><h3>2番</h3><div class="price">1,000円</div>複数ページの制作</div>
+  <div class="plan-card"><h3>3番</h3><div class="price">100円</div>制作者名の記載を無しにする</div>
+  <div class="plan-card"><h3>4番</h3><div class="price">300円</div>レスポンシブ対応</div>
+  <div class="plan-card"><h3>5番</h3><div class="price">300円</div>アニメーション、グラデーション</div>
+  <div class="plan-card"><h3>6番</h3><div class="price">1,000円</div>お問い合わせシステム(管理者画面に反映する)</div>
+  <div class="plan-card"><h3>7番</h3><div class="price">500円</div>ブログページ追加</div>
+  <div class="plan-card"><h3>8番</h3><div class="price">1,100円</div>会社、企業向けサイト(軽UIのみ可能)</div>
+  <div class="plan-card"><h3>9番</h3><div class="price">月額10円・年間3,650円・永遠7,650円</div>Webサイトのセキュリティ対策&管理</div>
+  <div class="plan-card"><h3>10番</h3><div class="price">100円</div>画像スライダー追加</div>
+  <div class="plan-card"><h3>11番</h3><div class="price">月額10円・年間3,650円</div>公開月額料金(必ず付いてきます,GitHubでの公開)</div>
+  <div class="plan-card"><h3>12番</h3><div class="price">200円</div>スライドショー</div>
+  <div class="plan-card"><h3>13番</h3><div class="price">200円</div>FAQページ作成</div>
+  <div class="plan-card"><h3>14番</h3><div class="price">500円</div>ポートフォリオページ</div>
+  <div class="plan-card"><h3>25番</h3><div class="price">400円</div>ギャラリー作成</div>
+  <div class="plan-card"><h3>26番</h3><div class="price">300円</div>動画埋め込み</div>
+  <div class="plan-card"><h3>27番</h3><div class="price">700円</div>多言語対応</div>
+  <div class="plan-card"><h3>28番</h3><div class="price">600円</div>カスタムフォーム</div>
+  <div class="plan-card"><h3>29番</h3><div class="price">800円</div>スライドメニュー</div>
+  <div class="plan-card"><h3>20番</h3><div class="price">500円</div>アニメーション追加</div>
+  <div class="plan-card"><h3>21番</h3><div class="price">100円</div>SNSリンク</div>
+  <div class="plan-card"><h3>22番</h3><div class="price">場合により変動円</div>依頼者からの指示</div>
+    <div class="plan-card"><h3>全部を利用する場合(年間料金含む)　16.400円　　　(6,400円を分けて送金)</h3>
+</div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Café Aurora サンプルサイト2</title>
+<style>
+body::before {
+  content: "";
+  position: fixed;
+  top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.2);
+  pointer-events:none;
+}
+
+@keyframes bgMove {
+  0% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+  100% { background-position:0% 50%; }
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top:0;
+  z-index:1000;
+}
+header h1 { margin:0; font-size:24px; color:#fff;}
+.nav { display:flex; gap:15px; flex-wrap:wrap; margin-top:10px; }
+.nav a { color:#fff; text-decoration:none; font-weight:bold; }
+.nav a:hover { color:#fffa; }
+
+.section {
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  border:1px solid rgba(255,255,255,0.50);
+  padding:30px;
+  margin:30px auto;
+  max-width:1000px;
+  opacity:0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+.section.show { opacity:1; transform: translateY(0); }
+
+h2 { font-size:24px; text-shadow:0 2px 4px rgba(0,0,0,0.4); color:#fff; }
+
+.menu-list { display:flex; flex-wrap:wrap; gap:20px; }
+.menu-item { flex:1 1 200px; background: rgba(255,255,255,0.18); padding:20px; border-radius:14px; text-align:center; transition: transform 0.3s; text-shadow: 0 2px 4px rgba(0,0,0,0.5);}
+.menu-item:hover { transform: translateY(-5px) scale(1.05); }
+
+.gallery { display:flex; flex-wrap:wrap; gap:15px; }
+.gallery img { flex:1 1 200px; border-radius:14px; max-width:100%; display:block; }
+
+footer { text-align:center; padding:20px; font-size:14px; opacity:0.85; color:#fff; }
+
+@media(max-width:768px){
+  header { flex-direction: column; align-items:flex-start; }
+  .nav { overflow-x:auto; gap:10px; width:100%; margin-top:10px; }
+  .menu-list, .gallery { flex-direction:column; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Café Aurora</h1>
+  <nav class="nav">
+    <a href="index.html">ホーム</a>
+    <a href="#menu">メニュー</a>
+    <a href="#gallery">ギャラリー</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+</header>
+
+<section id="hero" class="section">
+  <h2>心地よいひとときをあなたに</h2>
+  <p>Café Auroraは落ち着いた空間で美味しいコーヒーとスイーツを提供します。</p>
+</section>
+
+<section id="menu" class="section">
+  <h2>おすすめメニュー</h2>
+  <div class="menu-list">
+    <div class="menu-item">カフェラテ</div>
+    <div class="menu-item">抹茶ラテ</div>
+    <div class="menu-item">チーズケーキ</div>
+    <div class="menu-item">季節のスイーツ</div>
+  </div>
+</section>
+
+<section id="gallery" class="section">
+  <h2>ギャラリー</h2>
+  <div class="gallery">
+    <img src="https://placekitten.com/300/200" alt="画像晴れます">
+    <img src="https://placekitten.com/301/200" alt="画像晴れます">
+    <img src="https://placekitten.com/302/200" alt="画像晴れます">
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2>お問い合わせ</h2>
+  <p>お気軽に <a href="#">こちら</a> からご連絡ください。</p>
+</section>
+
+<footer>
+  © 2025 Café Aurora
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add('show');
+  });
+});
+document.querySelectorAll('.section').forEach(sec => observer.observe(sec));
+</script>
+
+</body>
+</html>

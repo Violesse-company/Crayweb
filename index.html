@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crayweb Web制作サービス</title>
+  <style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0a3d62, #1e90ff, #6dd5fa);
+  background-size: 300% 300%;
+  animation: bgMove 12s ease infinite;
+  color: #fff;
+  line-height: 1.7;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  scroll-margin-top: 200px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  opacity: 0;
+  transform: translateY(50px) rotateX(15deg) scale(0.95);
+  transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.section.show {
+  opacity: 1;
+  transform: translateY(0) rotateX(0) scale(1);
+}
+
+.section:hover {
+  transform: translateY(-5px) rotateX(6deg) rotateY(6deg);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.45);
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #ffffff;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.5);
+}
+
+.pay-box {
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(12px);
+  padding: 20px;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.pay-box:hover {
+  transform: scale(1.05) rotateY(5deg);
+}
+
+header {
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: white;
+  padding: 20px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.nav a {
+  color: #e3f3ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #aee1ff;
+}
+
+.price {
+  color: #aee1ff;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+a {
+  color: #e3f3ff;
+  text-decoration: underline;
+}
+
+  .nav {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    margin-top: 10px;
+    width: 90%;
+  }
+
+  .section {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  /* スマホ対応 */
+@media (max-width: 768px) {
+header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+</style>
+</head>
+<body>
+  <header>
+    <h1>Crayweb Web制作サービス</h1>
+    <nav class="nav">
+      <a href="index.html">ホーム</a>
+      <a href="ryoukin.html">料金紹介</a>
+      <a href="paypay.html">PayPay支払いについて</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <section class="section">
+      <h2>サービス概要</h2>
+      <p>低価格で企業向けレベルのデザイン・動きを持つWebページを制作します。<br>
+      PayPay支払い対応。お気軽にご依頼ください。</p>
+    </section>
+
+    <section class="section">
+      <h2>サービス内容</h2>
+      <ul>
+        <li>1ページのみのサイト制作：<span class="price">500円</span></li>
+        <li>複数ページの制作：<span class="price">1,000円</span></li>
+        <li>制作者名の記載を無しにする：<span class="price">100円</span></li>
+        <li>アニメーション、グラデーション：<span class="price">300円</span></li>
+        <li>お問い合わせシステム(管理者画面に反映する)：<span class="price">1,000円</span></li>
+        <li>会社、企業向けサイト(軽UIのみ可能)：<span class="price">1,100円</span></li>
+        <li>Webサイトのセキュリティ対策&管理：<span class="price">月額10円・年間3,650円・永遠7,650円</span></li>
+        <li><b>公開月額料金(必ず付いてきます,GitHubでの公開)：<b><span class="price"><b>月額10円・年間3,650円</b></span></li>
+        <li><a href="ryoukin.html"><var><b>詳しく</b></var></a></li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>作成可能サンプルサイト</h2>
+      <p>制作可能なサイトのURLです。</p>
+      <ul>
+        <li><a href="sannpuru.html">TechNovaサンプルサイト（リンク）</a></li>
+        <li><a href="sannpuru2.html">Café Auroraサンプルサイト（リンク）</a></li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>依頼方法</h2>
+      <p>X（Twitter）やDMでご依頼いただけます。</p>
+      <p>連絡先：<a href="#">SNSリンク</a></p>
+      <p>※支払いは制作完了後送金してください。</p>
+      <p><var>※必ず料金紹介、支払いについてをご覧の上依頼してください。</var></p>
+    </section>
+
+    <section class="section">
+      <h2>PayPay支払いについて</h2>
+      <div class="pay-box">
+        <p>サイト作成後、PayPayの送金で料金をお支払いください。</p>
+        <p>もしくは下記から詳しい支払い内容をご確認ください。</p>
+        <ul>
+          <li><a href="paypay.html"><font color="#4169E1"><var><b>PayPay支払いについて</b></var></a></li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    © 2025 Crayweb Web制作サービス
+  </footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
+  document.querySelectorAll('.section').forEach(sec => observer.observe(sec));
+</script>
+</body>
+</html>
